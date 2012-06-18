@@ -1,0 +1,5 @@
+<% if @taxon.present? %>
+<%= auto_discovery_link_tag(:rss, spree.nested_taxons_path(:id => @taxon.permalink, :format => :xml), {:title => "#{@taxon.name} Products Feed"}) %>
+<% else %>
+<%= auto_discovery_link_tag(:rss, spree.products_path(:format => :xml), {:title => "Products Feed" }) %>
+<% end %>
